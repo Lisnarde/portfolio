@@ -17,7 +17,10 @@ Concept : un **graphe de connaissances façon « synapses »**. Les nœuds sont 
 - **Next.js (App Router) + TypeScript strict + Tailwind CSS**
 - **Export statique** : `output: "export"` dans `next.config.ts` (GitHub Pages ne sert que du statique)
 - Graphe : **Cytoscape.js**, chargé **uniquement côté client** via `next/dynamic` (`ssr: false`). Instance stockée dans un `useRef`, jamais dans un state.
-- Déploiement : GitHub Actions → GitHub Pages
+- Déploiement : GitHub Actions → GitHub Pages (`.github/workflows/deploy.yml`)
+  - push sur `main` / PR : lint + build uniquement (pas de mise en ligne)
+  - mise en ligne : tag `v*` (`git tag v1.2 && git push --tags`) ou lancement manuel depuis l'onglet Actions
+  - dépôt `portfolio` → `basePath: "/portfolio"`. Les chemins vers `public/` écrits à la main (ex. `<img src>`) doivent tenir compte du `basePath`.
 ### Contraintes GitHub Pages
 - `images: { unoptimized: true }` (pas d'optimisation d'image côté serveur)
 - `basePath` si le dépôt ne s'appelle pas `<pseudo>.github.io`

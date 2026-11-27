@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   images: { unoptimized: true },
-  // basePath: "/portfolio", // seulement si le repo ne s'appelle pas <pseudo>.github.io
+  basePath: "/portfolio", // nom du dépôt GitHub (site servi sur <pseudo>.github.io/portfolio)
   turbopack: {
     rules: {
       "*.css": {
