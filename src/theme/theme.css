@@ -1,0 +1,38 @@
+/*
+ * Thème du site : seul endroit où l'on définit couleurs, polices, rayons…
+ * Les composants n'utilisent que les classes Tailwind générées à partir
+ * de ces variables (bg-background, text-foreground, text-accent, font-sans…).
+ */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --muted: #5c5c5c;
+  --accent: #e95420;
+  --surface: #f4f4f5;
+  --border: #e4e4e7;
+  --radius: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --muted: #a1a1aa;
+    --accent: #f26b3a;
+    --surface: #18181b;
+    --border: #27272a;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --radius-theme: var(--radius);
+  --font-sans: var(--font-sans-family), system-ui, sans-serif;
+  --font-mono: var(--font-mono-family), ui-monospace, monospace;
+}

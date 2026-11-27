@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
+  // basePath: "/portfolio", // seulement si le repo ne s'appelle pas <pseudo>.github.io
   turbopack: {
     rules: {
       "*.css": {
